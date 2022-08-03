@@ -23,7 +23,7 @@ gradient builder: https://cssgradient.io/
 
 <body>
     <header class="title-container">
-        <h1 class="title">Let's play a game!
+        <h1 class="title">Let's play a game
         </h1>
         <div class="score-container">
             <div class="score-box player-score-box">Player:
@@ -36,45 +36,38 @@ gradient builder: https://cssgradient.io/
         </div>
     </header>
     <div class="game-container">
-        <h2>First To 5 Points Wins</h2>
-
-        <form action="" class="game-board play-board">
-            <input type="radio" id="rock" class="game-icon" name="players-choice" value="rock">
-            <label for="rock">Rock</label>
-            <input type="radio" id="paper" name="players-choice" value="paper">
-            <label for="paper">Paper</label>
-            <input type="radio" id="scissors" name="players-choice" value="scissors">
-            <label for="scissors">Scissors</label>
-        </form>
-
-
-
-        <div class="game-board results-board">
-            <div class="game-board-tokens">
-                <div class="game-icon-container rock-token">
-                    <div class="rock-image game-icon">
-                        <img src="images\rock.png">
-                    </div>
-                    <div class="game-icon-text">Rock</div>
-                </div>
-                <div class="game-icon-container outcome-text-token">
-                    <div class="outcome-text">Beats</div>
-                </div>
-                <div class="game-icon-container scissors-token">
-                    <div class="scissors-image game-icon shadow">
-                        <img src="images\cut-scissor.png">
-                    </div>
-                    <div class="game-icon-text">Scissors</div>
-                </div>
+        <h2>First to 5 points wins...</h2>
+        <container class="game-play-container">
+            <div class="play-text">Choose Your Weapon!</div>
+            <div class="play-token-container">
+                <div class="game-token game-play-token game-play-token-rock rock-token" id="rock"></div>
+                <div class="game-token game-play-token game-play-token-paper paper-token" id="paper"></div>
+                <div class="game-token game-play-token game-play-token-scissors scissors-token" id="scissors"></div>
             </div>
-        </div>
-        <h2 class="result-text">You Win</h2>
-        <button class="play-button">Choose Your Weapon</button>
+    </div>
+    </container>
 
     </div>
     <container class="game-outcome-container">
-
+        <div class="result-text"></div>
+        <div class="result-token-container">
+            <div class="player-choice-container choice-container">
+                <div class="player-choice-text">You picked <span class="players-selection-text"></span></div>
+                <!-- <div class="player-choice-icon"> -->
+                <div class="game-token player-choice-token" id="player"></div>
+                <!-- </div> -->
+            </div>
+            <div class="elroy-choice-container choice-container">
+                <div class="elroy-choice-text">Elroy picked <span class="elroys-selection-text"></span></div>
+                <!-- <div class="elroy-choice-icon"> -->
+                <div class="game-token elroy-choice-token" id="elroy"></div>
+                <!-- </div> -->
+            </div>
+        </div>
+        <button class="result-button">Next Round</button>
+        </div>
     </container>
 </body>
+<script src="app.js"></script>
 
 </html>
