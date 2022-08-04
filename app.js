@@ -50,19 +50,20 @@ function findId() {
         playerChoiceToken.classList.add('scissors-token');
     }
 
+
+
+    elroyPick();
+    outCome(itemClicked);
+    results();
+
     if (playerScoreVale === 5 || elroyScoreValue === 5) {
         if (playerScoreVale === 5) {
             resultText.innerHTML = "Well done, you beat Elroy";
         } else {
-            resultText.innerHTML = "Elroy won this game, better luck next time.";
+            resultText.innerHTML = "Elroy won this game, </br> better luck next time.";
         }
-        resetButton.innerHTML = "Restart Game";
+        resetButton.innerHTML = "Let's Play Again";
     }
-
-    elroyPick();
-    results();
-
-    outCome(itemClicked);
 
 }
 
@@ -72,18 +73,18 @@ resetButton.addEventListener('click', finishRound);
 function resetGame() {
 
     if (playerScoreVale === 5 || elroyScoreValue === 5) {
-        resetButton.innerHTML = "Next Round";
+        //resetButton.innerHTML = "Let's Play Again";
         playerScoreVale = 0;
         playerScore.innerHTML = playerScoreVale;
         elroyScoreValue = 0;
         elroyScore.innerHTML = elroyScoreValue;
     }
 
+    resetButton.innerHTML = "Next Round";
     gameContainer.classList.remove('hide');
     outcomeContainer.classList.remove('show-flex');
     clearIcons();
     //resultText.innerHTML = "";
-    resultText.innerHTML = "";
 }
 
 function finishRound() {
@@ -124,10 +125,12 @@ function outCome(v) {
     else if (((v === "rock") && (elroysChoice === 'scissors')) ||
         ((v === "paper") && (elroysChoice === 'rock')) ||
         ((v === "scissors") && (elroysChoice === 'paper'))) {
+        //return player;
         resultText.innerHTML = "You Win!!";
     } else if (((v === "rock") && (elroysChoice === 'paper')) ||
         ((v === "paper") && (elroysChoice === 'scissors')) ||
         ((v === "scissors") && (elroysChoice === 'rock'))) {
+        //return elroy;
         resultText.innerHTML = "You Loose, Elroy Wins";
     }
 }
@@ -139,7 +142,8 @@ function results() {
     } else if (resultText.innerHTML === "You Loose, Elroy Wins") {
         elroyScoreValue = elroyScoreValue + 1;
         elroyScore.innerHTML = elroyScoreValue;
-    } else if (resultText.innerHTML === "Draw") {
+    }
+    else if (resultText.innerHTML === "Draw") {
         playerScoreVale = playerScoreVale;
         elroyScoreValue = elroyScoreValue;
     }
