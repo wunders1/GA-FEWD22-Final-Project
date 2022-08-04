@@ -1,21 +1,52 @@
+/* font-family: 'Caveat', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Edu SA Beginner', cursive;
+font-family: 'Exo 2', sans-serif;
+font-family: 'Sansita Swashed', cursive; */
+
+
 body {
     width: auto;
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background: rgb(80, 225, 247);
-    background-image: linear-gradient(135deg,
+    /* background-image: linear-gradient(135deg,
             rgb(31, 138, 135) 0%,
             rgb(19, 91, 136) 69%,
+            rgba(20, 47, 186, 0.667) 100%); */
+    background-image: linear-gradient(135deg,
+            rgb(31, 44, 138) 0%,
+            rgb(28, 66, 126) 69%,
             rgba(20, 47, 186, 0.667) 100%);
 }
 
 .title {
     text-align: center;
-    border: 2px solid #68676a;
+    /* border: 2px solid #68676a; */
     margin: 5px;
     color: white;
     margin-bottom: 0;
+}
+
+h1 {
+    font-family: "pacifico";
+    font-size: 36px;
+    font-weight: 10;
+    letter-spacing: 5px;
+}
+
+.neon-text {
+    color: rgb(229, 35, 35);
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(255, 0, 234),
+        0 0 82px rgb(255, 0, 234),
+        0 0 92px rgb(255, 0, 234),
+        0 0 102px rgb(255, 0, 234),
+        0 0 151px rgb(255, 0, 234);
 }
 
 
@@ -24,12 +55,14 @@ body {
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
+    margin-top: 20px;
+
 }
 
 
 .score-box {
     color: white;
-    border: 1px solid #68676a;
+    /* border: 1px solid #68676a; */
     padding: 5px 10px;
     margin: 5px;
     margin-top: 0;
@@ -41,6 +74,7 @@ body {
 .player-score-box,
 .elroy-score-box {
     flex-grow: 2;
+    border: 1px solid lightgrey;
 }
 
 .rules-box {
@@ -187,7 +221,11 @@ h2 {
 @media (min-width: 768px) {
 
     h2 {
-        font-size: 48px;
+        font-size: 72px;
+    }
+
+    .rules-box {
+        display: block;
     }
 
     .game-play-container {
@@ -203,6 +241,7 @@ h2 {
     .play-token-container {
         position: relative;
         background-image: url("images/plain-triangle.png");
+        background-size: cover;
         width: 600px;
         height: 500px;
         background-position: center;
@@ -246,4 +285,40 @@ h2 {
 
 .show-flex {
     display: flex;
+}
+
+.result-button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+    background: black;
+    border: 2px solid lightgrey;
+    box-shadow: 5px 5px 0 rgb(255, 0, 234),
+        -5px -5px 0 rgb(255, 0, 234),
+        -5px 5px 0 rgb(255, 0, 234),
+        5px -5px 0 rgb(255, 0, 234);
+    transition: 500ms ease-in-out;
+}
+
+button:hover {
+    border: 2px solid rgb(255, 0, 234);
+    box-shadow: 20px 5px 0 rgb(255, 0, 234), -20px -5px 0 rgb(255, 0, 234);
+}
+
+button:focus {
+    outline: none;
 }
