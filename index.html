@@ -7,6 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalise.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@700&family=Edu+SA+Beginner:wght@600&family=Exo+2:wght@400;500;600;700;800&family=Sansita+Swashed:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "pacifico";
+            src: url('Fonts/Pacifico-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: "clip";
+            src: url('Fonts/Clip.ttf');
+        }
+
+    </style>
     <title>Rock Paper Scissors</title>
 </head>
 
@@ -23,79 +40,59 @@ gradient builder: https://cssgradient.io/
 
 <body>
     <header class="title-container">
-        <h1 class="title">Let's play a game
+        <h1 class="title neon-text">Rock-Paper-Scissors
         </h1>
         <div class="score-container">
             <div class="score-box player-score-box">Player:
                 <span class="player-score">0</span>
             </div>
-            <div class="score-box rules-box">Rules</div>
+            <div class="score-box rules-box rules-box-top">Rules</div>
             <div class="score-box elroy-score-box">Elroy:
                 <span class="elroy-score">0</span>
             </div>
         </div>
     </header>
     <div class="game-container">
-        <h2>First To 5 Points Wins</h2>
-        <div class="game-board play-board">
-            <div class="wrapper">
-                <div class="container">
-                    <div>
-                        <input type="radio" id="rock" class="game-icon rock-icon" name="players-choice" value="rock">
-                        <label for="rock" class="rock-label">
-                            <img src="images\rock.png" class="rock-image game-icon shadow">
-                        </label>
-                    </div>
-                    <div class="icon-text">Rock</div>
-                </div>
-                <div class="container">
-                    <div>
-                        <input type="radio" id="paper" class="game-icon paper-icon" name="players-choice" value="paper">
-                        <label for="paper" class="paper-label">
-                            <img src="images\paper-plane-outline.png" class="paper-image game-icon shadow">
-                        </label>
-                    </div>
-                    <div class="icon-text">Paper</div>
-                </div>
-                <div class="container ">
-                    <div>
-                        <input type="radio" id="scissors" class="game-icon scissors-icon" name="players-choice"
-                            value="scissors">
-                        <label for="scissors" class="scissors-label">
-                            <img src="images\cut-scissor.png" class="scissors-image game-icon shadow">
-                        </label>
-                        <div class="icon-text">Scissors</div>
-                    </div>
-                </div>
+        <h2>First to 5 points wins...</h2>
+        <container class="game-play-container">
+            <div class="play-text">Choose Your Weapon!</div>
+            <div class="play-token-container">
+                <div class="game-token game-play-token game-play-token-rock rock-token" id="rock"></div>
+                <div class="game-token game-play-token game-play-token-paper paper-token" id="paper"></div>
+                <div class="game-token game-play-token game-play-token-scissors scissors-token" id="scissors"></div>
             </div>
-        </div>
-        <div class="game-board results-board">
-            <div class="game-board-tokens">
-                <div class="game-icon-container rock-token">
-                    <div class="rock-image game-icon">
-                        <img src="images\rock.png">
-                    </div>
-                    <div class="game-icon-text">Rock</div>
-                </div>
-                <div class="game-icon-container outcome-text-token">
-                    <div class="outcome-text">Beats</div>
-                </div>
-                <div class="game-icon-container scissors-token">
-                    <div class="scissors-image game-icon shadow">
-                        <img src="images\cut-scissor.png">
-
-                    </div>
-                    <div class="game-icon-text">Scissors</div>
-                </div>
-            </div>
-        </div>
-        <h2 class="result-text">You Win</h2>
-        <button class="play-button">Choose Your Weapon</button>
+    </div>
+    </container>
 
     </div>
     <container class="game-outcome-container">
-
+        <div class="result-text"></div>
+        <div class="result-token-container">
+            <div class="player-choice-container choice-container">
+                <div class="player-choice-text">You picked <span class="players-selection-text"></span></div>
+                <!-- <div class="player-choice-icon"> -->
+                <div class="game-token player-choice-token" id="player"></div>
+                <!-- </div> -->
+            </div>
+            <div class="elroy-choice-container choice-container">
+                <div class="elroy-choice-text">Elroy picked <span class="elroys-selection-text"></span></div>
+                <!-- <div class="elroy-choice-icon"> -->
+                <div class="game-token elroy-choice-token" id="elroy"></div>
+                <!-- </div> -->
+            </div>
+        </div>
+        <button class="result-button">Next Round</button>
+        </div>
     </container>
+    <div class="score-box rules-box rules-box-top">Rules</div>
+    <footer>
+        <div class="copyright">copyright <span>
+                <img class="logo" src="images/DW-Logo.png" alt="DW-Logo">
+            </span>
+            design 2022
+        </div>
+    </footer>
 </body>
+<script src="app.js"></script>
 
 </html>
