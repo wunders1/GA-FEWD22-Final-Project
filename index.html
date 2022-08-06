@@ -43,7 +43,8 @@ gradient builder: https://cssgradient.io/
         <h1 class="title neon-text">Rock-Paper-Scissors
         </h1>
         <div class="score-container">
-            <div class="score-box player-score-box">Player:
+            <div class="score-box player-score-box">
+                <span class="player-name"> Player</span>:
                 <span class="player-score">0</span>
             </div>
             <div class="score-box rules-box rules-box-top">Rules</div>
@@ -52,8 +53,10 @@ gradient builder: https://cssgradient.io/
             </div>
         </div>
     </header>
+
+
     <div class="game-container">
-        <h2>First to 5 points wins...</h2>
+        <!-- <h2>First to 5 points wins...</h2> -->
         <container class="game-play-container">
             <div class="play-text">Choose Your Weapon!</div>
             <div class="play-token-container">
@@ -81,15 +84,52 @@ gradient builder: https://cssgradient.io/
                 <!-- </div> -->
             </div>
         </div>
-        <button class="result-button">Next Round</button>
+        <div class="button-container">
+            <button class="button result-button">Next Round</button>
+            <button class="button change-player-name-button">New Player</button>
         </div>
     </container>
-    <div class="score-box rules-box rules-box-top">Rules</div>
+    <div class="score-box rules-box rules-box-bottom">Rules</div>
+
+
+    <div class="form-background">
+        <div class="form-container">
+            <h2 class="form-heading">Would you like to play a game?</h2>
+            <p class="intro-text"> Do you think you could beat Elroy in this simple game?
+                Enter you name below to test your skill.
+            </p>
+            <form class="name-form">
+                <label for="player-name">Who's playing:</label><br>
+                <span class="name-error">Please enter a valid name:</span>
+                <input type="text" id="fname" name="player-name" placeholder="Enter you name"><br>
+                <input type="submit" class="submit button letsPlayButton" value="Let's play!">
+            </form>
+        </div>
+    </div>
+
+    <div class="rules">
+        <div class="rules-content">
+            <span class="close">&times;</span>
+            <h3>Rock Paper Scissors Rules</h3>
+            <p>To beat against Elroy, you will need to earn five points before he manages to. The outcome of each round
+                is determines by 3 simple rules:
+            <ul>
+                <li>Rock wins against Scissors</li>
+                <li>Scissors wins against Paper</li>
+                <li>Paper wins against Rock</li>
+            </ul>
+            Good luck and have fun!
+            </p>
+        </div>
+    </div>
+
+
+
     <footer>
-        <div class="copyright">copyright <span>
+        <div class="copyright"> &#169 <span>
                 <img class="logo" src="images/DW-Logo.png" alt="DW-Logo">
             </span>
-            design 2022
+            Design 2022
         </div>
     </footer>
 </body>
