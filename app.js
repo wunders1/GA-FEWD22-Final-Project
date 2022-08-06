@@ -108,7 +108,7 @@ function findId() {
         if (playerScoreVale === 5) {
             resultText.innerHTML = "Well done, you beat Elroy";
         } else {
-            resultText.innerHTML = "Elroy won this game, </br> better luck next time.";
+            resultText.innerHTML = "Elroy won this game, better luck next time.";
         }
         resetButton.innerHTML = "Let's Play Again";
         newPlayerButton.classList.add('show-block');
