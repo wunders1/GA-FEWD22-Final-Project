@@ -27,12 +27,6 @@
 <!--
 Player = user
 Elroy = computer player
-
-rock svg = https://zerowastesonoma.gov/uploads/icons/rock.svg
-paper svg = https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.0.0-6/svg/ios-paper-plane-outline.svg
-
-
-gradient builder: https://cssgradient.io/
 -->
 
 <body>
@@ -51,9 +45,7 @@ gradient builder: https://cssgradient.io/
         </div>
     </header>
 
-
     <div class="game-container">
-        <!-- <h2>First to 5 points wins...</h2> -->
         <container class="game-play-container">
             <div class="play-text">Choose Your Weapon!</div>
             <div class="play-token-container">
@@ -63,22 +55,17 @@ gradient builder: https://cssgradient.io/
             </div>
     </div>
     </container>
-
     </div>
     <container class="game-outcome-container">
         <div class="result-text"></div>
         <div class="result-token-container">
             <div class="player-choice-container choice-container">
                 <div class="player-choice-text">You picked <span class="players-selection-text"></span></div>
-                <!-- <div class="player-choice-icon"> -->
                 <div class="game-token player-choice-token" id="player"></div>
-                <!-- </div> -->
             </div>
             <div class="elroy-choice-container choice-container">
                 <div class="elroy-choice-text">Elroy picked <span class="elroys-selection-text"></span></div>
-                <!-- <div class="elroy-choice-icon"> -->
                 <div class="game-token elroy-choice-token" id="elroy"></div>
-                <!-- </div> -->
             </div>
         </div>
         <div class="button-container">
@@ -87,8 +74,6 @@ gradient builder: https://cssgradient.io/
         </div>
     </container>
     <div class="score-box rules-box rules-box-bottom">Rules</div>
-
-
     <div class="form-background">
         <div class="form-container">
             <h2 class="form-heading">Would you like to play a game?</h2>
@@ -103,25 +88,24 @@ gradient builder: https://cssgradient.io/
             </form>
         </div>
     </div>
-
     <div class="rules">
         <div class="rules-content">
             <span class="close">&times;</span>
-            <h3>Rock Paper Scissors Rules</h3>
-            <p>To beat against Elroy, you will need to earn five points before he manages to. The outcome of each round
+            <h3 class="rules-title">Rock Paper Scissors Rules</h3>
+            <p class="rules-text">To beat Elroy, you will need to earn five points before he manages to. The outcome of
+                each round
                 is determines by 3 simple rules:
-            <ul>
+            </p>
+            <ul class="rules-list">
                 <li>Rock wins against Scissors</li>
                 <li>Scissors wins against Paper</li>
                 <li>Paper wins against Rock</li>
             </ul>
-            Good luck and have fun!
+            <p class="rules-text rules-luck">
+                Good luck and have fun!
             </p>
         </div>
     </div>
-
-
-
     <footer>
         <div class="copyright"> &#169 <span>
                 <img class="logo" src="images/DW-Logo.png" alt="DW-Logo">

@@ -1,9 +1,3 @@
-
-// Obtain all elements we want to use
-
-
-// Obtain all elements we want to use
-
 // Player entry form elements
 let playerEntryBackground = document.querySelector('.form-background');
 let newPlayerModal = document.querySelector('.form-container');
@@ -12,8 +6,11 @@ let pname = document.querySelector('#fname');
 let playerNameBox = document.querySelector('.player-name');
 let errorMessage = document.querySelector('.name-error');
 
+
 // let letsPlayButton = document.querySelector('.letsPlayButton');
 let playerName;
+let playerNameRaw;
+
 
 // Score board elements
 const playerScore = document.querySelector('.player-score');
@@ -21,11 +18,13 @@ const elroyScore = document.querySelector('.elroy-score');
 let playerScoreVale = 0;
 let elroyScoreValue = 0;
 
+
 // Game board Elements
 let gameContainer = document.querySelector('.game-container');
 let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
+
 
 // Outcome/results board elements
 let outcomeContainer = document.querySelector('.game-outcome-container');
@@ -39,12 +38,14 @@ let newPlayerButton = document.querySelector('.change-player-name-button');
 
 let elroysChoice;
 
+
 // Find ID of clicked element
 rock.addEventListener('click', findId);
 paper.addEventListener('click', findId);
 scissors.addEventListener('click', findId);
 
 let itemClicked;
+
 
 // Find ID's for rules modal
 let rulesBackground = document.querySelector('.rules');
@@ -53,14 +54,14 @@ let closeButton = document.querySelector('.close');
 let rulesButtonTop = document.querySelector('.rules-box-top');
 let rulesButtonBottom = document.querySelector('.rules-box-bottom');
 
-
 nameForm.addEventListener('submit', updatePlayerName);
 
 
 function updatePlayerName(event) {
     event.preventDefault();
-    playerName = pname.value;
-    if (playerName.length > 1) {
+    playerNameRaw = pname.value;
+    if (playerNameRaw.length >= 1) {
+        playerName = playerNameRaw[0].toUpperCase() + playerNameRaw.slice(1);
         playerNameBox.innerHTML = playerName;
         errorMessage.classList.remove('show-block');
         playerEntryBackground.classList.add('hide');
@@ -72,15 +73,13 @@ function updatePlayerName(event) {
 
 newPlayerButton.addEventListener('click', resetName);
 
+
 function resetName() {
     playerName.innerHTML = "";
     nameForm.reset();
     playerEntryBackground.classList.remove('hide');
     resetGame();
 }
-
-
-
 
 
 function findId() {
@@ -115,7 +114,9 @@ function findId() {
     }
 }
 
+
 resetButton.addEventListener('click', finishRound);
+
 
 function resetGame() {
 
@@ -136,9 +137,11 @@ function resetGame() {
     //resultText.innerHTML = "";
 }
 
+
 function finishRound() {
     resetGame();
 }
+
 
 function elroyPick() {
     let x = Math.floor((Math.random() * 9) + 1);
@@ -157,6 +160,7 @@ function elroyPick() {
     }
 }
 
+
 function clearIcons() {
     outcomeContainer.classList.remove('show-flex');
     playerChoiceToken.classList.remove('rock-token');
@@ -166,6 +170,7 @@ function clearIcons() {
     elroyChoiceToken.classList.remove('paper-token');
     elroyChoiceToken.classList.remove('scissors-token');
 }
+
 
 function outCome(v) {
     if (v === elroysChoice) {
@@ -184,6 +189,7 @@ function outCome(v) {
     }
 }
 
+
 function results() {
     if (resultText.innerHTML === "You Win!!") {
         playerScoreVale = playerScoreVale + 1;
@@ -198,20 +204,16 @@ function results() {
     }
 }
 
-// let rulesBackground = document.querySelector('.rules');
-// let rulesModal = document.querySelector('.rules-content');
-// let closeButton = document.querySelector('.close');
-// let rulesButtonTop = document.querySelector('.rules-box-top');
-// let rulesButtonBottom = document.querySelector('.rules-box-bottom');
-
 
 function showRules() {
     rulesBackground.classList.add('rules-show');
 }
 
+
 function hideRules() {
     rulesBackground.classList.remove('rules-show');
 }
+
 
 rulesButtonTop.addEventListener('click', showRules);
 rulesButtonBottom.addEventListener('click', showRules);
