@@ -1,17 +1,22 @@
 body {
     width: auto;
-    min-height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
+    min-height: calc(100vh - 35px);
     background: #060c21;
-    overflow-y: hidden;
+    overflow-y: auto;
     font-family: 'Edu SA Beginner', cursive;
+    position: relative;
+}
+
+body::after {
+    content: "";
+    display: block;
+    height: 35px;
 }
 
 
 .title {
     text-align: center;
-    margin: 5px;
+    margin: 15px 5px;
     color: white;
     margin-bottom: 0;
 }
@@ -264,7 +269,7 @@ h2 {
 
 .game-outcome-container::before,
 .game-outcome-container::after {
-    background: linear-gradient(235deg, #ff00f2, #d42323, #07d400);
+    background: linear-gradient(235deg, #ff00f2, #2f23d4, #07d400);
 }
 
 
@@ -333,7 +338,7 @@ footer {
 .form-background {
     display: none;
     position: fixed;
-    color: lightgray;
+    color: white;
     z-index: 1000;
     left: 0;
     top: 0;
@@ -364,7 +369,7 @@ footer {
     background-color: #060c21;
     margin: 20% auto;
     padding: 20px;
-    border: 1px solid lightgray;
+    border: 1px solid white;
     width: 70%;
     max-width: 500px;
 }
@@ -403,7 +408,7 @@ footer {
 
 
 .close {
-    color: lightgray;
+    color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -415,7 +420,7 @@ footer {
 .close:hover,
 .close:focus {
     color: #060c21;
-    background-color: lightgray;
+    background-color: white;
     text-decoration: none;
     cursor: pointer;
 }
@@ -549,6 +554,11 @@ footer {
         display: block;
     }
 
+    .rules-content,
+    .form-container {
+        margin: 10% auto;
+    }
+
 
     .score-container {
         margin-top: 35px;
@@ -625,32 +635,15 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .hide {
     display: none;
 }
 
+
 .show-flex {
     display: flex;
 }
+
 
 .show-block {
     display: block;
