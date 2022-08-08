@@ -407,6 +407,11 @@ footer {
 }
 
 
+#fname {
+    margin: 5px 0;
+}
+
+
 .close {
     color: white;
     float: right;
